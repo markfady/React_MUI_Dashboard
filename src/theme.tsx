@@ -2,9 +2,6 @@ import { createContext,useState,useMemo } from "react";
 import {createTheme} from "@mui/material/styles"
 import { PaletteMode } from "@mui/material";
 
-interface Imode{
-    mode:PaletteMode
-}
 
 //color design token
 export const tokens=(mode:PaletteMode)=>({
@@ -131,7 +128,7 @@ export const tokens=(mode:PaletteMode)=>({
 export const themeSettings=(mode:PaletteMode)=>{
     const colors=tokens(mode)
     return{
-        paltte:{
+        palette:{ // palette  instead of paltte take care of this typo
             mode:mode,
             ...(mode==='dark')?{
                 primary:{
@@ -196,20 +193,17 @@ export const themeSettings=(mode:PaletteMode)=>{
         }
     }
 }
-
-export const ColorModeContext=createContext({
-    toggleColorMode:()=>{
-
-    }
-})
+export const ColorModeContext = createContext({
+    toggleColorMode: () => {},
+  });
 export const useMode=()=>{
     const [mode,setMode]=useState<PaletteMode>("dark")
-    const colorMode= useMemo(
-        ()=>({
+    const colorMode= useMemo(()=>({
             toggleColorMode:()=>setMode((prev)=>(prev==="light"?"dark":"light"))
         }),
         []
     );
+    console.log(mode)
     const theme=useMemo(()=>createTheme(themeSettings(mode)),[mode])
     return [theme,colorMode];
 }
