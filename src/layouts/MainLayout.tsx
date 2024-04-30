@@ -9,7 +9,7 @@ const MainLayout = () => {
     <>
     <Box height="100vh" display="flex">
     <Sidebar />
-    <Box flexGrow={1} display="flex" flexDirection="column"> {/* flex grow when found a empty space on use it , so justify content of the header works */}
+    <Box flexGrow={1} display="flex" flexDirection="column" overflow="hidden"> {/* flex grow when found a empty space on use it , so justify content of the header works */}
     <Topbar/>
         <Outlet />
       </Box>
