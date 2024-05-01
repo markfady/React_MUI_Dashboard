@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout";
 import Dashboard from "../scenes/dashboard/Dashboard";
 import ManageTeam from "../scenes/manageTeam/ManageTeam";
 import Contacts from "../scenes/contacts/Contacts";
+import Invoices from "../scenes/invoices/Invoices";
 // pages
 
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:"contacts",
         element:<Contacts/>
+      },
+      {
+        path:"invoices",
+        element:<Invoices/>
       }
     ],
   },
