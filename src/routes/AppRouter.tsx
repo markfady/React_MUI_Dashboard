@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Dashboard from "../scenes/dashboard/Dashboard";
 import ManageTeam from "../scenes/manageTeam/ManageTeam";
+import Contacts from "../scenes/contacts/Contacts";
 // pages
 
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: "/team",
         element: <ManageTeam />,
       },
+      {
+        path:"contacts",
+        element:<Contacts/>
+      }
     ],
   },
 ]);
